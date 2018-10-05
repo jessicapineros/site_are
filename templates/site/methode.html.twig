@@ -1,1 +1,12 @@
-<h1>page methode </h1>
+{% extends 'base.html.twig'%}
+
+{% block body %}
+  <h1>page methode </h1>
+
+  <h2>Comments {{ comments| length}}</h2>
+
+  <ul>{% for comment in comments %}
+        <li>{{comment}}</li>
+      {% endfor %}
+  </ul>
+{% endblock %}

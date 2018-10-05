@@ -23,6 +23,7 @@ class SiteController extends AbstractController
      */
     public function about()
     {
+
       return $this->render('site/about.html.twig', [
           'page' => "about",
           'bienvenue' => "bienveue ici les amis",
@@ -35,7 +36,16 @@ class SiteController extends AbstractController
      */
     public function methode()
     {
+
+      $comments = [
+        'Esto es un test',
+        'que chimba aprender',
+        'esta lindo el dia'
+      ];
+
       return $this->render('site/methode.html.twig', [
+        //'title' => ucwords(str_replace('-', ' ', $slug)),
+        'comments' => $comments,
 
       ]);
     }
@@ -83,7 +93,7 @@ class SiteController extends AbstractController
     /**
      * @Route("/contact/{slug}", name="contact")
      */
-    public function test_show($slug)
+    public function contact($slug)
     {
       return new Response(sprintf('Este es el numero: %s', $slug));
     }
