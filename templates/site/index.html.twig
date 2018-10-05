@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Salut {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+    </ul>
+
+    <br>
+
+    <section class="articles">
+      <article>
+         <h2>titre de l'article</h2>
+         <div class="metadata">Écrit le 4-10-2018 à 19:00 dans la categorie Politique</div>
+         <div class="content">
+           <img src="https://via.placeholder.com/350x150" alt="">
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ipsam, tempora dolor repellendus ipsa, sunt.</p>
+           <p>Corporis repellendus cumque dolore cum atque quaerat, odit perspiciatis, provident, ipsam minima eum iusto saepe.</p>
+           <a href="{{path('blog_show')}}" class="btn btn-primary">Lire la suite</a>
+         </div>
+       </article>
+       <br>
+       <article>
+         <h2>titre de l'article</h2>
+         <div class="metadata">Écrit le 4-10-2018 à 19:00 dans la categorie Politique</div>
+         <div class="content">
+           <img src="http://placehold.it/350x150" alt="">
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta vel expedita amet quasi at quibusdam.</p>
+           <p>Ipsum facilis, nobis cum animi similique doloribus distinctio in, vero assumenda quasi, ducimus dolore rem.</p>
+           <a href="" class="btn btn-primary">Lire la suite</a>
+         </div>
+       </article>
+    </section>
+
+
+</div>
+{% endblock %}
