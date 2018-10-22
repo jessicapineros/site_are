@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
         {% block stylesheets %}
-          <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <!--  <link rel="stylesheet" href="{asset('build/css/app.css')}}">-->
         {% endblock %}
     </head>
     <body>
@@ -41,12 +41,12 @@
           {% block body %}
 
 
-
-
           {% endblock %}
         </div>
 
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+          <script type="text/javascript" src="{{ asset('build/js/app.js')}}"></script>
+        {% endblock %}
     </body>
 </html>
