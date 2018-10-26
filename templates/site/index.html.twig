@@ -3,22 +3,43 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
+<div id="home">
+  <div class="container-fluid">
+    <div class="slider row">
+      <div class=""></div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Expérimentez l'art de la relation avec l'Atelier Relationnel </h1>
+    <h3>Nous vous invitons à découvrir la Méthode R.E.®<br>Un outil concret, précis, à la fois simple et puissant pour faciliter nos relations.</h3>
+    <div class="catchphrase">
+      <h2>Écouter,  Dire,  Être en relation<br/><span>en prenant soin de soi, de l’autre et ... de la relation.</span></h2>
+    </div>
+    <div class="buttons-home">
+        <a class="methode" href="#">la Méthode R.E.®</a>
+        <a class="formations" href="#">Formations</a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="comments row">
+      <div class="col-12 col-md-6">
+        <p>Pour avoir suivi et expérimenté la méthode R.E.®, j'ai pris conscience qu'elle apportait un enrichissement important aux autres techniques de communication, en introduisant une vraie empathie dans la relation. </p>
+          <p><span>Georges</span></p>
+        <p>L’apprentissage de R.E.® m’a permis de découvrir à quel point les relations en sont facilitées : L’autre est entendu et reconnu, notre message est bien reçu et compris. Quel outil génial !!!</p>
+        <p><span>Sylvie</span></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <p>J'ai décidé de faire une formation RE pour être plus à même de m'occuper de  ma mère vieillissante. Je me rendais compte que je n'avais pas le bon comportement et la bonne écoute face à sa maladie. <br/>RE m'a donné les outils et la bonne énergie pour l' écouter avec empathie. Cette formation a été déterminante dans ma vie, elle m'a aidé à me sentir mieux, plus en phase avec mon entourage. ( mari, enfants, petits-enfants, amis )
+        <p> Mon mari suit actuellement cette formation, et j'en suis très heureuse car notre relation s'en trouve très enrichie.!</p>
+        <p><span>Christine</span></p>
+      </div>
+    </div>
+  </div><!--end of comments-->
+</div><!--end of div home-->
+
+<!--
 <div class="example-wrapper">
-    <h1>Salut {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-
-    <br>
-
     <section class="articles">
       <article>
          <h2>titre de l'article</h2>
@@ -27,22 +48,13 @@
            <img src="https://via.placeholder.com/350x150" alt="">
            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ipsam, tempora dolor repellendus ipsa, sunt.</p>
            <p>Corporis repellendus cumque dolore cum atque quaerat, odit perspiciatis, provident, ipsam minima eum iusto saepe.</p>
+           <p><span>Christine</span></p>
            <a href="{{path('blog_show')}}" class="btn btn-primary">Lire la suite</a>
          </div>
        </article>
        <br>
-       <article>
-         <h2>titre de l'article</h2>
-         <div class="metadata">Écrit le 4-10-2018 à 19:00 dans la categorie Politique</div>
-         <div class="content">
-           <img src="{{asset('/img/morningwalk.jpg')}}" alt="">
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta vel expedita amet quasi at quibusdam.</p>
-           <p>Ipsum facilis, nobis cum animi similique doloribus distinctio in, vero assumenda quasi, ducimus dolore rem.</p>
-           <a href="" class="btn btn-primary">Lire la suite</a>
-         </div>
-       </article>
     </section>
+  </div>
+-->
 
-
-</div>
 {% endblock %}

@@ -1,0 +1,265 @@
+// BASE
+body{
+  min-width: 320px;
+  font-family: $lato;
+  @include font( 1rem, 400, $gray);
+  line-height: 1.5;
+  background-color: $white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1{
+  font-family: $montserrat;
+  margin: 60px 0 45px 0;
+  text-align: center;
+  @include font(1.2rem, 600, $darkblue);
+  line-height: 1.5;
+}
+h2{
+  font-family: $pacifico;
+  @include font(1.6rem, 400, $yellow);
+  margin: 3rem 0 3rem 0;
+}
+h3{
+  @include font(1rem, 400, $lightblue);
+  line-height: 2.3rem;
+}
+h4{
+  font-family: $montserrat;
+  @include font(1.3rem, 600, $blue);
+  margin: 25px 0 25px 0;
+}
+h5{
+  @include font(1rem, 400, $orange);
+  margin: 10px 0 10px 0;
+}
+a{
+  color: $white;
+  &:hover,
+  &:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+//header
+header{
+  background-color: $orange;
+  .logonavbar{
+    .logo{
+      div{
+        min-height: 105px;
+        width: 105px;
+        background: url('../img/logo-modif4.png') $white;
+        @include background(contain, no-repeat, center);
+      }
+    }
+    .menu{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      nav{
+        font-family: $montserrat;
+        @include font(0.875rem, 500, $white);
+        ul{
+          display: flex;
+          li{
+            +li{
+              margin-left: 2.5rem; //todos los lis que tengan un li arriba
+            }
+            a{
+              padding: 10px;
+              &:hover{
+                color: $orange;
+                background-color: $white;
+                border-radius: 5px;
+                //font-weight: 600;
+              }
+            }
+          }//end of li
+        }//end of ul
+        .burger {
+          &:hover{
+            background-color: transparent;
+          }
+          img{
+            width: 2.5rem;
+          }
+        }//end of burger
+      }//end of nav
+    }//end of menu
+  }//en of logonavbar
+  .menu-responsive{
+    background-color: $orange;
+    text-align: center;
+    li{
+      height: 3.5rem;
+      line-height: 3.5rem;
+      &:hover{
+        background-color: $white;
+        a{
+          color: $orange;
+        }
+      }
+    }
+  }
+}//end of header
+
+
+//-----------------------home------------------------------
+
+#home{
+  .slider{
+    div{
+      width: 100%;
+      height: 336px;
+      background: url('../img/photo1.jpg');
+      @include background(cover, no-repeat, center);
+    }
+  }//end of slider
+  h3{
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+    span{
+      font-family: $lato;
+      @include font(1.2rem, 500, $lightblue);
+      font-style: italic;
+      margin-top: 60px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .buttons-home{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px 0 40px 0;
+    a{
+      display: flex;
+      width: 226px;//312px;
+      height: 90px;//132px;
+      margin: 20px;
+      background-color: $purple;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      &:hover{
+        color: $white;
+      }
+      &:first-child{
+        background-color: $red;
+      }
+    }
+  }
+  .comments{
+    margin-top: 50px;
+    font-style: italic;
+    div{
+      padding: 80px 30px 45px 30px;
+      background-color: $beige;
+      text-align: center;
+      &:first-child{
+        background-color: $blue;
+        color: $white;
+      }
+      p{
+        font-size: 0.937rem;
+        line-height: 24px;
+        span{
+          color: $orange;
+          font-weight: 600;
+        }
+      }
+    }//end of div
+  }//end of comments
+}//end of home
+
+//----------------footer--------------
+
+footer{
+  color: $white;
+  .contact-footer{
+    background-color: $footer-gray;
+    padding: 40px;
+    font-size: 0.875rem;
+    .h4{
+      justify-content: center;
+    }
+    .info-cotact{
+      align-items: center;
+      div:nth-child(1){
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    .image-footer{
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: $orange;
+      background: url('../img/anne.jpg');
+      @include background(cover, no-repeat, center);
+    }
+    .monique{
+      .image-footer{
+        background: url('../img/monique2.jpg');
+        background-size: contain;
+      }
+      span{
+        font-size: 0.75rem;
+      }
+    }
+    .links{
+      text-align: center;
+      font-size: 13px;
+      line-height: 25px;
+      a{
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+  .menu-footer{
+    padding: 50px 0 30px 0;
+    background-color: $orange;
+    width: 100%;
+    ul{
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 35px;
+      li{
+        a{
+          margin: 0px 5px 0px 5px;
+          font-size: 0.7rem;
+          &:hover{
+            color: $footer-gray;
+          }
+        }
+      }
+    }
+    p{
+      text-align: center;
+      font-size: 0.7rem;
+      margin-left: 35px;
+      margin-right: 35px;
+      a{
+        font-weight: 600;
+        &:hover{
+          color: $footer-gray;
+        }
+      }
+
+    }
+  }
+}

@@ -1,54 +1,121 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <!--<link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">-->
-        {% block stylesheets %}
-           <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Montserrat|Pacifico" rel="stylesheet">
-           <link rel="stylesheet" href="{{asset('build/css/app.css')}}">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{% block title %}Welcome!{% endblock %}</title>
+      <!--<link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">-->
+      {% block stylesheets %}
+         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Montserrat|Pacifico" rel="stylesheet">
+         <link rel="stylesheet" href="{{asset('build/css/app.css')}}">
 
-        {% endblock %}
+      {% endblock %}
     </head>
+
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand" href="/">Site ARE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{path('about')}}">about</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/methode">Methode</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/formations">formations</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{path('contact',{slug: 'test-de-prueba'})}}">Contact</a>
-                </li>
-
-            </ul>
-          </div>
-        </nav>
-
+      <header>
         <div class="container">
-          {% block body %}
+          <div class="logonavbar row">
+              <div class="logo col-9 col-lg-4">
+                <a href="/"><div class="logo-img"></div></a>
+              </div>
+              <div class="menu col-3 col-lg-8">
+                <nav class="d-none d-lg-block">
+                  <ul>
+                    <li><a href="{{path('about')}}">Qui sommes-nous</a></li>
+                    <li><a href="/methode">Méthode R.E.®</a></li>
+                    <li><a href="/formations">Formations</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                  </ul>
+                </nav>
+                <nav class="d-lg-none">
+                  <ul>
+                    <li><a class="burger" href="#"><img src="{{ asset('img/menu.svg')}}" alt=""></a></li>
+                  </ul>
+                </nav>
+              </div><!--end of menu -->
+          </div><!--end of logonavbar -->
+        </div><!--end of container -->
+        <div class="menu-responsive d-lg-none">
+          <nav>
+            <ul>
+              <li><a href="{{path('about')}}">Qui somes-nous</a></li>
+              <li><a href="/methode">Méthode R.E.®</a></li>
+              <li><a href="/formatons">Formations</a></li>
+              <li><a href="{{path('contact',{slug: 'test-de-prueba'})}}">Contact</a></li>
+            </ul>
+          </nav>
+        </div><!--end of menu-responsive -->
+      </header>
+
+      {% block body %}
 
 
-          {% endblock %}
-        </div>
+      {% endblock %}
 
+      <footer>
+          <div class="contact-footer">
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <div class="row h4">
+                  <h4>Nous contacter</h4>
+                </div>
+                <div class="row">
+                  <div class="anne col-12 col-lg-6">
+                    <div class="row info-cotact">
+                      <div class="col-5 col-md-6">
+                        <div class="image-footer"></div>
+                      </div>
+                      <div class="col-6">
+                        <h5>AnneLaurence<br/>DOMBRE</h5>
+                        <p>Practicien RE</p>
+                        <p>06 16 70 053<br/>annelodo@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="monique col-12 col-lg-6">
+                    <div class="row info-cotact">
+                      <div class="col-5 col-md-6">
+                        <div class="image-footer"></div>
+                      </div>
+                      <div class="col-6">
+                        <h5>Monique <br/>DUCARRE</h5>
+                        <p>Superviseur RE</p>
+                        <p>06 75 89 63 27<br/><span>monique.ducarre@wanadoo.fr</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="links col-12 col-lg-3">
+                <h4>Liens</h4>
+                <ul>
+                  <li><a href="">Institut Francophone de la Relation - IFRE</a></li>
+                  <li><a href="">Nicole SARRADON (13)</a></li>
+                  <li><a href="">Maud RYAUX NOUDEL (84) </a></li>
+                  <li><a href="">Céline Barrau (83)</a></li>
+                  <li><a href="">Marie PUGEAT (38)</a></li>
+                  <li><a href="">Sandra MARQUES (32)</a></li>
+                  <li><a href="">Lise Nathanson (95)</a></li>
+                  <li><a href="">William BOURIAUX (83) (32)</a></li>
+                  <li><a href="">Ingrid LEBEAU (34)</a></li>
+                </ul>
+              </div><!--end of links -->
+            </div><!--end of row -->
+          </div><!--end of contact form -->
+          <div class="menu-footer">
+            <ul class="row">
+              <li><a href="#">Qui sommes-nous</a></li>
+              <li><a href="#">Méthode R.E.</a></li>
+              <li><a href="#">Formations</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <p>Copyright © 2018 L’Atelier Relationnel - Conception et réalisation  - <a href="#">Jessica PINEROS DROIN</a> - <a href="#">Mentions légales</a></p>
+          </div>
+      </footer>
 
-        {% block javascripts %}
-          <script type="text/javascript" src="{{ asset('build/js/app.js')}}"></script>
-        {% endblock %}
+      {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('build/js/app.js')}}"></script>
+      {% endblock %}
     </body>
 </html>

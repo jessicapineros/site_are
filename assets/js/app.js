@@ -26,6 +26,26 @@ $(document).ready(function() {
 });
 
 
+$(function(){
+  /*
+ * Get Viewport Dimensions
+ * returns object with viewport dimensions to match css in width and height properties
+ * ( source: https://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
+*/
+  function updateViewportDimensions() {
+  	var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+  	return { width:x,height:y };
+  }
+  // setting the viewport width
+  var viewport = updateViewportDimensions();
+  var viewportWidth = $(window).width();
+
+  //Burger - On gere l'affichage du menu responsif pour les écrans inférieurs au égaux à medium (<992px)
+  $(".menu-responsive").toggle();
+  $(".burger").click(function (){
+      $(".menu-responsive").toggle("slow");
+  })
+});
 
 
 
