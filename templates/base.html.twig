@@ -3,9 +3,10 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>{% block title %}Welcome!{% endblock %}</title>
+      <title>{% block title %}Atelier Relationnel{% endblock %}</title>
       <!--<link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">-->
       {% block stylesheets %}
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
          <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Montserrat|Pacifico" rel="stylesheet">
          <link rel="stylesheet" href="{{asset('build/css/app.css')}}">
 
@@ -39,7 +40,7 @@
         <div class="menu-responsive d-lg-none">
           <nav>
             <ul>
-              <li><a href="{{path('about')}}">Qui somes-nous</a></li>
+              <li><a href="{{path('about')}}">Qui sommes-nous</a></li>
               <li><a href="/methode">Méthode R.E.®</a></li>
               <li><a href="/formatons">Formations</a></li>
               <li><a href="{{path('contact',{slug: 'test-de-prueba'})}}">Contact</a></li>
@@ -69,7 +70,7 @@
                       <div class="col-6">
                         <h5>AnneLaurence<br/>DOMBRE</h5>
                         <p>Practicien RE</p>
-                        <p>06 16 70 053<br/>annelodo@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 06 16 70 053<br/><i class="far fa-envelope"></i> annelodo@gmail.com</p>
                       </div>
                     </div>
                   </div>
@@ -81,7 +82,7 @@
                       <div class="col-6">
                         <h5>Monique <br/>DUCARRE</h5>
                         <p>Superviseur RE</p>
-                        <p>06 75 89 63 27<br/><span>monique.ducarre@wanadoo.fr</span></p>
+                        <p><i class="fas fa-phone"></i> 06 75 89 63 27<br/><span><i class="far fa-envelope"></i> monique.ducarre@wanadoo.fr</span></p>
                       </div>
                     </div>
                   </div>
@@ -90,15 +91,15 @@
               <div class="links col-12 col-lg-3">
                 <h4>Liens</h4>
                 <ul>
-                  <li><a href="">Institut Francophone de la Relation - IFRE</a></li>
-                  <li><a href="">Nicole SARRADON (13)</a></li>
-                  <li><a href="">Maud RYAUX NOUDEL (84) </a></li>
-                  <li><a href="">Céline Barrau (83)</a></li>
-                  <li><a href="">Marie PUGEAT (38)</a></li>
-                  <li><a href="">Sandra MARQUES (32)</a></li>
-                  <li><a href="">Lise Nathanson (95)</a></li>
-                  <li><a href="">William BOURIAUX (83) (32)</a></li>
-                  <li><a href="">Ingrid LEBEAU (34)</a></li>
+                  <li><a href="http://www.ifre.info" target="_blank">Institut Francophone de la Relation - IFRE</a></li>
+                  <li><a href="http://www.nicolesarradon.fr/" target="_blank">Nicole SARRADON (13)</a></li>
+                  <li><a href="http://faislelien.fr/" target="_blank">Maud RYAUX NOUDEL (84) </a></li>
+                  <li><a href="http://www.deviensquitues-var.com/" target="_blank">Céline Barrau (83)</a></li>
+                  <li><a href="https://mariepugeat.com/" target="_blank">Marie PUGEAT (38)</a></li>
+                  <li><a href="http://sexologuemarques.wixsite.com/sandram" target="_blank">Sandra MARQUES (32)</a></li>
+                  <li><a href="http://www.lise-nathanson.fr/" target="_blank">Lise Nathanson (95)</a></li>
+                  <li><a href="http://methode.re.relacom.monsite-orange.fr/" target="_blank">William BOURIAUX (83) (32)</a></li>
+                  <li><a href="http://www.sexologie-montpellier.fr/" target="_blank">Ingrid LEBEAU (34)</a></li>
                 </ul>
               </div><!--end of links -->
             </div><!--end of row -->
@@ -110,7 +111,7 @@
               <li><a href="#">Formations</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
-            <p>Copyright © 2018 L’Atelier Relationnel - Conception et réalisation  - <a href="#">Jessica PINEROS DROIN</a> - <a href="#">Mentions légales</a></p>
+            <p>Copyright © 2018 L’Atelier Relationnel - Conception et réalisation  - <a href="https://jessicapineros.com/">Jessica PINEROS DROIN</a> - <a href="#">Mentions légales</a></p>
           </div>
       </footer>
 

@@ -28,6 +28,33 @@ header{
   }
 }
 
+footer{
+  .contact-footer{
+    .info-cotact{
+      div:nth-child(1){
+        display: inline-block;
+      }
+    }
+    .image-footer{
+
+    }
+    .links{
+      text-align: center;
+      border-top: 0px;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+  }
+}
+
+//-------Pages general ---------
+.comments{
+  margin-top: 100px;
+  div{
+    padding: 80px 90px 45px 90px;
+  }
+}
+
 #home{
   .slider{
     div{
@@ -48,18 +75,25 @@ header{
     }
   }
 }
-footer{
-  .contact-footer{
-    .info-cotact{
-      div:nth-child(1){
-        display: inline-block;
-      }
-    }
-    .image-footer{
 
-    }
-    .links{
-      text-align: center;
+
+//-------- Pages general
+#about, #methode{
+.main-image{
+  div{
+    height: 475px;
+    h3{
+      font-size: 1.7rem;
+      margin: 70px;
     }
   }
+ }
+ .content{
+   padding: 0 15px 50px 15px;
+ }
+}
+//-------- Page qui sommes-nous
+#about{
+
+
 }
