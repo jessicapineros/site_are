@@ -1,1 +1,66 @@
-<h1>page ateliers </h1>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div id="ateliers">
+  <div class="container-fluid">
+    <div class="main-image row">
+      <div>
+        <h3>Des ateliers pour s’entraîner</h3>
+      </div>
+    </div>
+  </div>
+  <h1>Les Ateliers d’entraînement</h1>
+  <div class="container h3">
+    <h3>Vous êtes reparti de votre premier stage heureux d'avoir découvert un outil concret pour améliorer vos relations.</h3>
+    <h3> Vous avez envie de mettre en pratique R.E.® dans votre vie quotidienne (personnelle ou professionnelle...)</h3>
+    <h3><span>Les ateliers d’entraînement sont pour vous !</span></h3>
+    <h3>Dans un atelier, vous continuerez à vous entraîner à utiliser les outils de R.E.® pour conforter et développer les acquis de votre premier stage.</h3>
+  </div>
+
+  <div class="container-fluid block-gray">
+    <div class="container block-white">
+        <h2>Comment ?</h2>
+        <p>En groupe, de 4 à 6 personnes</p>
+        <p>Durée : 3 heures</p>
+        <br>
+        <p>La participation aux ateliers demande un engagement sur minimum 4 séances </p>
+        <p>Les entrainements sont accompagnés accompagné par un Praticien R.E.®</p>
+        <p>Tarif : entre 15 et 25€ la séance. (Tarif ajusté aux frais de déplacements du formateur.</p>
+        <br>
+        <p>Nos ateliersont lieu en ce moment à :</p>
+        <div id="stage-a1"class="stages-dates">
+          <p>Manosque (04)</p>
+          <p>Volonne à coté de Sisteron (04)</p>
+          <p>Nîmes (30)</p>
+        </div>
+
+        <h3 class="">Notre expérience nous montre que R.E.®, s'intègre au pas à pas en s'y entraînant régulièrement.</h3>
+        <p>Nous souhaitons pouvoir proposer un atelier d’entraînement à toute personne ayant découvert et expérimenter RE </p>
+        <p>dans un premier stage.</p>
+        <p>Si besoin vous trouverez la liste des ateliers proposés par d’autres Praticiens R.E.®, sur le site d’<span><a href="http://www.ifre.info" target="_blank">IFRE</a></span>.</p>
+    </div>
+  </div><!--end of container- block-white-->
+  <div class="cotainer">
+    <a class="voir-btn" href="{{path('stages')}}">Voir les Stages</a>
+  </div>
+
+  <div class="container-fluid">
+    <div class="comments row">
+      <div class="comment col-12 col-md-6">
+        <div>
+          <p class="quotes-start-orange quotes-end-orange">J’ai été vraiment marqué lors du stage RE lorsque j’ai senti l’apaisement dans mon corps, ce soulagement,  ce bien être intérieur quand ce que j’ai dit a été compris et entendu, surtout entendu !</p>
+          <p><span>Marion</span></p>
+        </div>
+      </div>
+      <div class="comment col-12 col-md-6">
+        <div class="">
+          <p class="quotes-start-blue quotes-end-blue">La formation R.E. fut pour moi l’occasion de dire et d’entendre me dire des choses qui sans cette  circonstance n’auraient sûrement pas été dite et qui pourtant sont tellement agréables et émouvantes et à dire et à entendre.</p>
+          <p><span>Sylvie</span></p>
+        </div>
+      </div>
+    </div>
+  </div><!--end of comments-->
+</div><!--end of stages-->
+
+{% endblock %}

@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //par default
+use Symfony\Component\Routing\Annotation\Route; //par default
 use Symfony\Component\HttpFoundation\Response;
 
 class SiteController extends AbstractController
@@ -15,6 +15,7 @@ class SiteController extends AbstractController
     {
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
+            'home' => 'active'
         ]);
     }
 
@@ -26,6 +27,7 @@ class SiteController extends AbstractController
 
       return $this->render('site/about.html.twig', [
           'page' => "about",
+          'about' => 'active',
           'bienvenue' => "bienveue ici les amis",
 
       ]);
@@ -36,7 +38,6 @@ class SiteController extends AbstractController
      */
     public function methode()
     {
-
       $comments = [
         'Esto es un test',
         'que chimba aprender',
@@ -81,6 +82,41 @@ class SiteController extends AbstractController
     }
 
     /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+      return $this->render('site/contact.html.twig', [
+
+      ]);
+    }
+
+    /**
+     * @Route("/mentions", name="mentions")
+     */
+    public function mentions()
+    {
+      return $this->render('site/mentions.html.twig', [
+
+      ]);
+    }
+
+    public function admin()
+    {
+      return $this->render('admin/admin.html.twig', [
+
+      ]);
+    }
+
+
+
+
+
+
+
+
+
+    /**
      * @Route("/blog/12", name="blog_show")
      */
     public function show()
@@ -90,11 +126,31 @@ class SiteController extends AbstractController
       ]);
     }
 
-    /**
-     * @Route("/contact/{slug}", name="contact")
+
+
+
+    /*
+      @Route("/contact/{slug}", name="contact")
      */
-    public function contact($slug)
-    {
-      return new Response(sprintf('Este es el numero: %s', $slug));
-    }
+    //public function contact($slug){
+      //return new Response(sprintf('Este es el numero: %s', $slug));  }
+      //
+      //<!--  <li><a href="{{path('contact',{slug: 'test-de-prueba'})}}">Contact</a></li> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

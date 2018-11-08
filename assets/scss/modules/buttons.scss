@@ -1,0 +1,26 @@
+.buttons-main{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px 0 40px 0;
+  a{
+    display: flex;
+    width: 226px;//312px;
+    height: 90px;//132px;
+    margin: 20px;
+    background-color: $purple;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+      color: $white;
+      -webkit-box-shadow: 11px 9px 16px -6px rgba(0,0,0,0.53);
+      -moz-box-shadow: 11px 9px 16px -6px rgba(0,0,0,0.53);
+      box-shadow: 11px 9px 16px -6px rgba(0,0,0,0.53);
+    }
+    &:first-child{
+      background-color: $red;
+    }
+  }
+}
