@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+  {% form_theme formStageA1 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+<h1>Creation de dates</h1>
+
+<div class="container">
+  {{form_start(formStageA1)}}
+  {{form_row(formStageA1.date, {'attr': {'placeholder' : "Ecrivez la date"}})}}
+  <button type="submit" class="btn btn-success" name="enregister">Enregistrer</button>
+  {{ form_end(formStageA1) }}
+</div>
+
+
+{% endblock %}

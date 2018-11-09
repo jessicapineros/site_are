@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div id="admin">
+  <div class="container">
+    <h1>Creation et modification de dates</h1>
+    <div class="row">
+      <div class="col-12">
+        <h2>Stage A1</h2>
+        <p>Dates:</p>
+        <p>2 et 3 mars 2019 en WE à Toulouse (Monique Ducarre et Elizabeth Guillebaud) <a class="btn btn-warning" href="#">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></p>
+        <p>dsfjdsfjdksfdfkjdf <a class="btn btn-warning" href="#">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></p>
+        <a class="btn btn-primary" href="{{ path('admin_create')}}">Ajouter une nouvelle date</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Stage A2</h2>
+        <p>Dates:</p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Stage B</h2>
+        <p>Dates:</p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Ateliers</h2>
+        <p>Dates:</p>
+
+      </div>
+    </div>
+    <br>
+    <br>
+
+  </div>
+</div>
+{% endblock %}

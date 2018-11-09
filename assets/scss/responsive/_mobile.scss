@@ -178,7 +178,7 @@ footer{
     ul{
       justify-content: center;
       align-items: center;
-      margin-bottom: 35px;
+      margin: 0 0 35px 0;
       li{
         a{
           margin: 0px 5px 0px 5px;
@@ -307,7 +307,7 @@ footer{
 
 
 // sauf #home
-#about, #methode, #formations, #contact, #ateliers, #stages, #mentions{
+#about, #methode, #formations, #contact, #ateliers, #stages, #mentions, #admin{
 .main-image{
   div{
     height: 336px;

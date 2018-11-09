@@ -27,11 +27,9 @@
         <br>
         <p>Prochaines dates de stages :</p>
         <div id="stage-a1"class="stages-dates">
-          <p>- 2 et 3 mars 2019 en WE à Toulouse (Monique Ducarre et Elizabeth Guillebaud)</p>
-          <p>- 5 avril 2019 en WE à Lyon (Monique Ducarre )</p>
-          <p>- 2 et 3 mars 2019 en WE à Toulouse (Monique Ducarre et Elizabeth Guillebaud)</p>
-          <p>- 4 octubre 2019 en WE à Toulouse (Elizabeth Guillebaud) xdgfxggfdhgfhgfhgfhgf xdgdfggdf fxgfhgddhtgdhtgfdh</p>
-          <p>- 2 et 3 mars 2019 en WE à Toulouse (Monique Ducarre et Elizabeth Guillebaud)</p>
+          {% for stage_a1 in stage_a1_dates %}
+            <p>{{ stage_a1.date }}</p>
+          {% endfor %}
         </div>
         <p>À partir de 5 personnes, nous pouvons vous faire des propositions de dates.</p>
         <h2>Stages à la demande</h2>
