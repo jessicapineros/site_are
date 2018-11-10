@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class SiteController extends AbstractController
 {
+
     /**
      * @Route("/", name="index")
      */
@@ -21,7 +22,7 @@ class SiteController extends AbstractController
     {
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
-            'home' => 'active'
+            'page' => 'active'
         ]);
     }
     /**
@@ -42,7 +43,7 @@ class SiteController extends AbstractController
     public function methode()
     {
       return $this->render('site/methode.html.twig', [
-
+        'page' => "methode",
       ]);
     }
     /**
@@ -51,7 +52,7 @@ class SiteController extends AbstractController
     public function formations()
     {
       return $this->render('site/formations.html.twig', [
-
+        'page' => "formations",
       ]);
     }
     /**
@@ -63,6 +64,7 @@ class SiteController extends AbstractController
       $stage_a1_dates = $repo->findAll();
 
       return $this->render('site/stages.html.twig', [
+        'page' => "formations",
         'stage_a1_dates' => $stage_a1_dates
       ]);
     }
@@ -72,7 +74,7 @@ class SiteController extends AbstractController
     public function ateliers()
     {
       return $this->render('site/ateliers.html.twig', [
-
+        'page' => "formations",
       ]);
     }
     /**
@@ -81,6 +83,7 @@ class SiteController extends AbstractController
     public function contact()
     {
       return $this->render('site/contact.html.twig', [
+        'page' => 'contact'
 
       ]);
     }
@@ -90,6 +93,7 @@ class SiteController extends AbstractController
     public function mentions()
     {
       return $this->render('site/mentions.html.twig', [
+        'page' => 'mentions'
       ]);
     }
     /**
@@ -101,6 +105,7 @@ class SiteController extends AbstractController
       $stage_a1_dates = $repo->findAll();
 
       return $this->render('site/admin.html.twig', [
+        'page' => 'admin',
         'stage_a1_dates' => $stage_a1_dates
 
       ]);
@@ -133,6 +138,7 @@ class SiteController extends AbstractController
 
       dump($request);
       return $this->render('site/create.html.twig', [
+          'page' => 'form',
           'id' => $stageA1->getId(),
           'formStageA1' => $formStageA1->createView()
       ]);
