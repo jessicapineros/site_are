@@ -8,8 +8,11 @@
       <div class="col-12">
         <h2>Stage A1</h2>
         <p>Dates:</p>
-        <p>2 et 3 mars 2019 en WE à Toulouse (Monique Ducarre et Elizabeth Guillebaud) <a class="btn btn-warning" href="#">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></p>
-        <p>dsfjdsfjdksfdfkjdf <a class="btn btn-warning" href="#">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></p>
+        <ul>
+          {% for stage_a1 in stage_a1_dates %}
+              <li>{{ stage_a1.date }} <a class="btn btn-warning" href="admin/{{stage_a1.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+          {% endfor %}
+        </ul>
         <a class="btn btn-primary" href="{{ path('admin_create')}}">Ajouter une nouvelle date</a>
       </div>
     </div>

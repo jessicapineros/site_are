@@ -97,21 +97,23 @@ class SiteController extends AbstractController
      */
     public function admin()
     {
+      $repo = $this->getDoctrine()->getRepository(StageA1::class);
+      $stage_a1_dates = $repo->findAll();
+
       return $this->render('site/admin.html.twig', [
+        'stage_a1_dates' => $stage_a1_dates
 
       ]);
     }
     /**
      * @Route("/admin/new", name="admin_create")
-     * @Route("/admin/edit"), name="blog_edit")
+     * @Route("/admin/{id}/edit"), name="blog_edit")
      */
-    public function form(Request $request, ObjectManager $manager)
+    public function form(StageA1 $stageA1= null, Request $request, ObjectManager $manager)
     {
-
-      $stageA1 = new StageA1();
-
-    //  $stageA1->setDate('date de stage nov 24 ');
-
+      if(!$stageA1){
+        $stageA1 = new StageA1();
+      }
 
       $formStageA1 = $this->createFormBuilder($stageA1)
                    ->add('date', TextType::Class)
@@ -131,11 +133,12 @@ class SiteController extends AbstractController
 
       dump($request);
       return $this->render('site/create.html.twig', [
+          'id' => $stageA1->getId(),
           'formStageA1' => $formStageA1->createView()
       ]);
     }
 
-
+//si $page == about
 
 
 
