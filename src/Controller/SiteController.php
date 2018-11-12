@@ -7,7 +7,8 @@ use Symfony\Component\Routing\Annotation\Route; //par default
 use Symfony\Component\HttpFoundation\Response;
 Use App\Entity\DatesFormations; //table Stage_a1 in sql
 use App\Repository\DatesFormationsRepository;
-
+Use App\Entity\Categogy;
+use App\Repository\CategoryRepository;
 
 
 use Symfony\Component\HttpFoundation\Request; // methode create -> requete http
@@ -77,8 +78,12 @@ class SiteController extends AbstractController
      */
     public function ateliers()
     {
+      $repo = $this->getDoctrine()->getRepository(DatesFormations::class);
+      $dates_formations = $repo->findAll();
+
       return $this->render('site/ateliers.html.twig', [
         'page' => "formations",
+        'dates_formations' => $dates_formations
       ]);
     }
     /**
@@ -141,15 +146,14 @@ class SiteController extends AbstractController
 
         return $this->redirectToRoute('admin');
       }
-
-      dump($DatesFormations);
-
-      dump($request);
+      //dump($DatesFormations);
+      //dump($request);
       return $this->render('site/create.html.twig', [
           'page' => 'form',
           'id' => $DatesFormations->getId(),
           'formDatesFormations' => $formDatesFormations->createView(),
           'editMode' => $DatesFormations->getId() !== null //si el id es diferente de null dara true
+
       ]);
     }
 

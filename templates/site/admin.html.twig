@@ -4,37 +4,57 @@
 <div id="admin">
   <div class="container">
     <h1>Creation et modification de dates</h1>
+    <a class="btn btn-primary" href="{{ path('admin_create')}}">Ajouter une nouvelle date</a>
     <div class="row">
       <div class="col-12">
         <h2>Stage A1</h2>
-        <p>Dates:</p>
+        <p>Dates :</p>
         <ul>
-          {% for date_formation in dates_formations %}
-              <li>{{ date_formation.date }} <a class="btn btn-warning" href="admin/{{date_formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+          {% for formation in dates_formations %}
+            {% if formation.category.title == "Stage A1"  %}
+              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
-        <a class="btn btn-primary" href="{{ path('admin_create')}}">Ajouter une nouvelle date</a>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <h2>Stage A2</h2>
         <p>Dates:</p>
-
+        <ul>
+          {% for formation in dates_formations %}
+            {% if formation.category.title == "Stage A2"  %}
+              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <h2>Stage B</h2>
         <p>Dates:</p>
-
+        <ul>
+          {% for formation in dates_formations %}
+            {% if formation.category.title == "Stage B"  %}
+              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <h2>Ateliers</h2>
         <p>Dates:</p>
-
+        <ul>
+          {% for formation in dates_formations %}
+            {% if formation.category.title == "Ateliers"  %}
+              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
     </div>
     <br>

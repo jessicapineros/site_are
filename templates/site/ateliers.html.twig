@@ -30,11 +30,12 @@
         <br>
         <p>Nos ateliersont lieu en ce moment à :</p>
         <div id="stage-a1"class="stages-dates">
-          <p>Manosque (04)</p>
-          <p>Volonne à coté de Sisteron (04)</p>
-          <p>Nîmes (30)</p>
+          {% for formations in dates_formations %}
+            {% if formations.category.title == "Ateliers"  %}
+              <p>{{ formations.date }}</p>
+            {% endif %}
+          {% endfor %}
         </div>
-
         <h3 class="">Notre expérience nous montre que R.E.®, s'intègre au pas à pas en s'y entraînant régulièrement.</h3>
         <p>Nous souhaitons pouvoir proposer un atelier d’entraînement à toute personne ayant découvert et expérimenter RE </p>
         <p>dans un premier stage.</p>
