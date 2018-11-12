@@ -9,8 +9,8 @@
         <h2>Stage A1</h2>
         <p>Dates:</p>
         <ul>
-          {% for stage_a1 in stage_a1_dates %}
-              <li>{{ stage_a1.date }} <a class="btn btn-warning" href="admin/{{stage_a1.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+          {% for date_formation in dates_formations %}
+              <li>{{ date_formation.date }} <a class="btn btn-warning" href="admin/{{date_formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
           {% endfor %}
         </ul>
         <a class="btn btn-primary" href="{{ path('admin_create')}}">Ajouter une nouvelle date</a>

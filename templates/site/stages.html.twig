@@ -27,8 +27,8 @@
         <br>
         <p>Prochaines dates de stages :</p>
         <div id="stage-a1"class="stages-dates">
-          {% for stage_a1 in stage_a1_dates %}
-            <p>{{ stage_a1.date }}</p>
+          {% for formations in dates_formations %}
+            <p>{{ formations.date }}</p>
           {% endfor %}
         </div>
         <p>À partir de 5 personnes, nous pouvons vous faire des propositions de dates.</p>

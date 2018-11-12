@@ -5,13 +5,16 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //par default
 use Symfony\Component\Routing\Annotation\Route; //par default
 use Symfony\Component\HttpFoundation\Response;
-Use App\Entity\StageA1; //table Stage_a1 in sql
-use App\Repository\StageA1Repository;
+Use App\Entity\DatesFormations; //table Stage_a1 in sql
+use App\Repository\DatesFormationsRepository;
+
+
+
 use Symfony\Component\HttpFoundation\Request; // methode create -> requete http
 use Doctrine\Common\Persistence\ObjectManager; //pour $manager->persist()
 use Symfony\Component\Form\Extension\Core\Type\TextType; //type imput text form
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use App\Form\StageA1Type;
+use App\Form\DatesFormationsType;
 
 class SiteController extends AbstractController
 {
@@ -59,14 +62,14 @@ class SiteController extends AbstractController
     /**
      * @Route("/formations/stages", name="stages")
      */
-    public function stages()//(StageA1Repository $repo)
+    public function stages()//(DatesFormationsRepository $repo)
     {
-      $repo = $this->getDoctrine()->getRepository(StageA1::class);
-      $stage_a1_dates = $repo->findAll();
+      $repo = $this->getDoctrine()->getRepository(DatesFormations::class);
+      $dates_formations = $repo->findAll();
 
       return $this->render('site/stages.html.twig', [
         'page' => "formations",
-        'stage_a1_dates' => $stage_a1_dates
+        'dates_formations' => $dates_formations
       ]);
     }
     /**
@@ -102,52 +105,51 @@ class SiteController extends AbstractController
      */
     public function admin()
     {
-      $repo = $this->getDoctrine()->getRepository(StageA1::class);
-      $stage_a1_dates = $repo->findAll();
+      $repo = $this->getDoctrine()->getRepository(DatesFormations::class);
+      $dates_formations = $repo->findAll();
 
       return $this->render('site/admin.html.twig', [
         'page' => 'admin',
-        'stage_a1_dates' => $stage_a1_dates
-
+        'dates_formations' => $dates_formations
       ]);
     }
     /**
      * @Route("/admin/new", name="admin_create")
      * @Route("/admin/{id}/edit"), name="blog_edit")
      */
-    public function form(StageA1 $stageA1= null, Request $request, ObjectManager $manager) //sur new el article est null sur edit contient les donnes de stageA1 con el id que le pasamos {id}/edit
+    public function form(DatesFormations $DatesFormations= null, Request $request, ObjectManager $manager) //sur new el article est null sur edit contient les donnes de DatesFormations con el id que le pasamos {id}/edit
     {
       //paramconverter : convertit un parametre en un entité ej: Strage A1 $stageA!
-      if(!$stageA1){// si stageA1 est null
-        $stageA1 = new StageA1();
+      if(!$DatesFormations){// si DatesFormations est null
+        $DatesFormations = new DatesFormations();
       }
 
       /*
-      $formStageA1 = $this->createFormBuilder($stageA1)
+      $formDatesFormations = $this->createFormBuilder($DatesFormations)
                    ->add('date', TextType::Class, array('label' => 'Date :'))
                    ->getForm();
       //en vez de esto se puede crear la clase con php bin/console make:form y se pone la linea de abajo
                  */
-      $formStageA1 = $this->createForm(StageA1Type::class, $stageA1);
+      $formDatesFormations = $this->createForm(DatesFormationsType::class, $DatesFormations);
 
-      $formStageA1->handleRequest($request); //tratar los datos
+      $formDatesFormations->handleRequest($request); //tratar los datos
 
-      if($formStageA1->isSubmitted() && $formStageA1->isValid()){
+      if($formDatesFormations->isSubmitted() && $formDatesFormations->isValid()){
 
-        $manager->persist($stageA1);
+        $manager->persist($DatesFormations);
         $manager->flush();
 
         return $this->redirectToRoute('admin');
       }
 
-      dump($stageA1);
+      dump($DatesFormations);
 
       dump($request);
       return $this->render('site/create.html.twig', [
           'page' => 'form',
-          'id' => $stageA1->getId(),
-          'formStageA1' => $formStageA1->createView(),
-          'editMode' => $stageA1->getId() !== null //si el id es diferente de null dara true
+          'id' => $DatesFormations->getId(),
+          'formDatesFormations' => $formDatesFormations->createView(),
+          'editMode' => $DatesFormations->getId() !== null //si el id es diferente de null dara true
       ]);
     }
 
