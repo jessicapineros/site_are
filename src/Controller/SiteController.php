@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request; // methode create -> requete http
 use Doctrine\Common\Persistence\ObjectManager; //pour $manager->persist()
 use Symfony\Component\Form\Extension\Core\Type\TextType; //type imput text form
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use App\Form\StageA1Type;
 
 class SiteController extends AbstractController
 {
@@ -114,17 +115,22 @@ class SiteController extends AbstractController
      * @Route("/admin/new", name="admin_create")
      * @Route("/admin/{id}/edit"), name="blog_edit")
      */
-    public function form(StageA1 $stageA1= null, Request $request, ObjectManager $manager)
+    public function form(StageA1 $stageA1= null, Request $request, ObjectManager $manager) //sur new el article est null sur edit contient les donnes de stageA1 con el id que le pasamos {id}/edit
     {
-      if(!$stageA1){
+      //paramconverter : convertit un parametre en un entité ej: Strage A1 $stageA!
+      if(!$stageA1){// si stageA1 est null
         $stageA1 = new StageA1();
       }
 
+      /*
       $formStageA1 = $this->createFormBuilder($stageA1)
-                   ->add('date', TextType::Class)
+                   ->add('date', TextType::Class, array('label' => 'Date :'))
                    ->getForm();
+      //en vez de esto se puede crear la clase con php bin/console make:form y se pone la linea de abajo
+                 */
+      $formStageA1 = $this->createForm(StageA1Type::class, $stageA1);
 
-      $formStageA1->handleRequest($request);
+      $formStageA1->handleRequest($request); //tratar los datos
 
       if($formStageA1->isSubmitted() && $formStageA1->isValid()){
 
@@ -140,7 +146,8 @@ class SiteController extends AbstractController
       return $this->render('site/create.html.twig', [
           'page' => 'form',
           'id' => $stageA1->getId(),
-          'formStageA1' => $formStageA1->createView()
+          'formStageA1' => $formStageA1->createView(),
+          'editMode' => $stageA1->getId() !== null //si el id es diferente de null dara true
       ]);
     }
 
