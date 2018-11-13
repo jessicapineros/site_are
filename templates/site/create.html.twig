@@ -4,16 +4,16 @@
 {% block body %}
 
   {% if editMode %}
-    <h1>Mettre à jour les dates</h1>
+    <h1>Mettre à jour les dates et/ou les lieux de formation</h1>
   {% else %}
-    <h1>Creation de dates</h1>
+    <h1>Création d'une date et/ou d'un lieu de formation</h1>
   {% endif %}
 
 
 <div class="container">
   {{form_start(formDatesFormations)}}
-  <!--{{ form_errors(formDatesFormations.date)}}
-  { form_label(formDatesFormations.date, 'Your name') }}-->
+  <!--{{ form_errors(formDatesFormations.date)}}-->
+  {{form_row(formDatesFormations.category, {'attr': {'placeholder' : "Choisize le type de formation"}})}}
   {{form_row(formDatesFormations.date, {'attr': {'placeholder' : "Entrez les informations"}})}}
   <button type="submit" class="btn btn-success" name="enregister">
     {% if editMode %}

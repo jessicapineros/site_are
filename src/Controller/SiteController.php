@@ -5,12 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //par default
 use Symfony\Component\Routing\Annotation\Route; //par default
 use Symfony\Component\HttpFoundation\Response;
-Use App\Entity\DatesFormations; //table Stage_a1 in sql
+
+Use App\Entity\DatesFormations; //table dates_formation in DB
 use App\Repository\DatesFormationsRepository;
 Use App\Entity\Categogy;
 use App\Repository\CategoryRepository;
-
-
 use Symfony\Component\HttpFoundation\Request; // methode create -> requete http
 use Doctrine\Common\Persistence\ObjectManager; //pour $manager->persist()
 use Symfony\Component\Form\Extension\Core\Type\TextType; //type imput text form
@@ -156,50 +155,6 @@ class SiteController extends AbstractController
 
       ]);
     }
-
-//si $page == about
-
-
-
-
-
-
-
-
-    /**
-     * @Route("/blog/12", name="blog_show")
-     */
-    public function show()
-    {
-      return $this->render('site/show.html.twig', [
-
-      ]);
-    }
-
-
-
-
-    /*
-      @Route("/contact/{slug}", name="contact")
-     */
-    //public function contact($slug){
-      //return new Response(sprintf('Este es el numero: %s', $slug));  }
-      //
-      //<!--  <li><a href="{{path('contact',{slug: 'test-de-prueba'})}}">Contact</a></li> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

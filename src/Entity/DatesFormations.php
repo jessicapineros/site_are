@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DatesFormationsRepository")
@@ -18,11 +20,14 @@ class DatesFormations
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=4, max=255, minMessage="La date est trop courte")
      */
     private $date;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="dates")
+     * @Assert\NotBlank(message="Choisir un type de formation")
      */
     private $category;
 
