@@ -112,6 +112,9 @@ class SiteController extends AbstractController
       $repo = $this->getDoctrine()->getRepository(DatesFormations::class);
       $dates_formations = $repo->findAll();
 
+       $this->denyAccessUnlessGranted('ROLE_ADMIN');
+       //https://symfony.com/doc/current/security.html
+
       return $this->render('site/admin.html.twig', [
         'page' => 'admin',
         'dates_formations' => $dates_formations

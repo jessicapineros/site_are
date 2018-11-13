@@ -2,6 +2,7 @@
 
 {% block body %}
 <div id="admin">
+  <a class="btn btn-success" href="{{path('security_logout')}}">Se deconnecter</a>
   <div class="container">
     <h1>Création et modification de dates et de lieux de formations</h1>
     <a class="btn btn-primary" href="{{ path('admin_create')}}">Ajouter une nouvelle date</a>
