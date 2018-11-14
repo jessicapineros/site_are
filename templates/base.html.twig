@@ -17,16 +17,19 @@
       <header>
         <div class="container">
           <div class="logonavbar row">
-              <div class="logo col-9 col-lg-4">
+              <div class="logo col-9 col-lg-3">
                 <a href="/"><div class="logo-img"></div></a>
               </div>
-              <div class="menu col-3 col-lg-8">
+              <div class="menu col-3 col-lg-9">
                 <nav class="d-none d-lg-block">
                   <ul>
                     <li><a class="{% if page == "about" %}active{% endif %}" href="{{path('about')}}">Qui sommes-nous</a></li>
                     <li><a class="{% if page == "methode" %}active{% endif %}" href="{{path('methode')}}">Méthode R.E.®</a></li>
                     <li><a class="{% if page == "formations" %}active{% endif %}" href="{{path('formations')}}">Formations</a></li>
                     <li><a class="{% if page == "contact" %}active{% endif %}" href="{{path('contact')}}">Contact</a></li>
+                    {% if app.user %}
+                      <li><a class="logout" href="{{path('security_logout')}}">Déconnexion</a> </li>
+                    {% endif %}
                   </ul>
                 </nav>
                 <nav class="d-lg-none">

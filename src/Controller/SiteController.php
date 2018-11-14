@@ -122,7 +122,7 @@ class SiteController extends AbstractController
     }
     /**
      * @Route("/admin/new", name="admin_create")
-     * @Route("/admin/{id}/edit"), name="blog_edit")
+     * @Route("/admin/{id}/edit"), name="admin_edit")
      */
     public function form(DatesFormations $DatesFormations= null, Request $request, ObjectManager $manager) //sur new el article est null sur edit contient les donnes de DatesFormations con el id que le pasamos {id}/edit
     {
@@ -158,7 +158,12 @@ class SiteController extends AbstractController
 
       ]);
     }
+    /**
+     * @Route("/admin/{id}/delete"), name="admin_delete")
+     */
+    public function delete(DatesFormations $DatesFormations, Request $request, ObjectManager $manager){
 
+    }
 
 
 }

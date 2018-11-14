@@ -10,6 +10,7 @@ use App\Form\RegistrationType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface; //$encoder (password)
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils; // login form Authentication
 
 class SecurityController extends AbstractController
 {
@@ -42,14 +43,20 @@ class SecurityController extends AbstractController
     /**
      * @Route("/connexion", name="security_login")
      */
-    public function login()
+    public function login(AuthenticationUtils $authenticationUtils)
     {
+        // get the login error if there is one
+      $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+      $lastUsername = $authenticationUtils->getLastUsername();
 
       return $this->render('security/login.html.twig', [
-            'page' => 'login'
+            'page' => 'login',
+            'last_username' => $lastUsername,
+            'error'         => $error
       ]);
     }
-    
+
     /**
      * @Route("/deconnexion", name="security_logout")
      */
