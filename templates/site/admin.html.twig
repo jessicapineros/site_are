@@ -20,7 +20,7 @@
         <ul>
           {% for formation in dates_formations %}
             {% if formation.category.title == "Stage A1"  %}
-              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="admin/{{formation.id}}/delete"> eliminer</a></li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -33,7 +33,7 @@
         <ul>
           {% for formation in dates_formations %}
             {% if formation.category.title == "Stage A2"  %}
-              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="#"> eliminer</a></li>
+              <li>{{ formation.date }} <a class="btn btn-warning" href="admin/{{formation.id}}/edit">editer</a> <a class="btn btn-danger" href="admin/{{formation.id}}/delete"> eliminer</a></li>
             {% endif %}
           {% endfor %}
         </ul>

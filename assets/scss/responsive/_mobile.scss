@@ -315,7 +315,7 @@ footer{
 
 
 // sauf #home
-#about, #methode, #formations, #contact, #ateliers, #stages, #mentions, #admin{
+#about, #methode, #formations, #contact, #ateliers, #stages, #mentions, #admin, #email{
 .main-image{
   div{
     height: 336px;
@@ -523,7 +523,9 @@ footer{
   }
   .voir-btn{
     position: relative;
-    margin: 25px auto 0 auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 22px auto 0 auto;
     padding: 10px;
     display: block;
     text-align: center;
@@ -581,5 +583,12 @@ footer{
   h3{
     text-align: left;
     font-weight: 600;
+  }
+}
+#email{
+  text-align: center;
+  min-height: 500px;
+  h1{
+    font-size: 1.15rem;
   }
 }

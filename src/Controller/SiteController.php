@@ -6,19 +6,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //par default
 use Symfony\Component\Routing\Annotation\Route; //par default
 use Symfony\Component\HttpFoundation\Response;
 
-Use App\Entity\DatesFormations; //table dates_formation in DB
-use App\Repository\DatesFormationsRepository;
-Use App\Entity\Categogy;
-use App\Repository\CategoryRepository;
-use Symfony\Component\HttpFoundation\Request; // methode create -> requete http
+use Symfony\Component\HttpFoundation\Request; // requete http /recibir datos por post
 use Doctrine\Common\Persistence\ObjectManager; //pour $manager->persist()
+
+Use App\Entity\DatesFormations; //table dates_formation in DB
+Use App\Entity\Categogy;
+Use App\Entity\Contact;
+use App\Repository\DatesFormationsRepository;
+use App\Repository\CategoryRepository;
+use App\Repository\ContactRepository;
+
+use App\Form\DatesFormationsType;
+use App\Form\ContactType;
 use Symfony\Component\Form\Extension\Core\Type\TextType; //type imput text form
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use App\Form\DatesFormationsType;
+
 
 class SiteController extends AbstractController
 {
-
     /**
      * @Route("/", name="index")
      */
@@ -29,6 +34,7 @@ class SiteController extends AbstractController
             'page' => 'active'
         ]);
     }
+
     /**
      * @Route("/about", name="about")
      */
@@ -41,6 +47,7 @@ class SiteController extends AbstractController
           'bienvenue' => "bienveue ici les amis",
       ]);
     }
+
     /**
      * @Route("/methode", name="methode")
      */
@@ -50,6 +57,7 @@ class SiteController extends AbstractController
         'page' => "methode",
       ]);
     }
+
     /**
      * @Route("/formations", name="formations")
      */
@@ -59,6 +67,7 @@ class SiteController extends AbstractController
         'page' => "formations",
       ]);
     }
+
     /**
      * @Route("/formations/stages", name="stages")
      */
@@ -85,16 +94,53 @@ class SiteController extends AbstractController
         'dates_formations' => $dates_formations
       ]);
     }
+
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact()
+    public function contact(Request $request, ObjectManager $manager, \Swift_Mailer $mailer)
     {
-      return $this->render('site/contact.html.twig', [
-        'page' => 'contact'
+      $contact = new Contact;
+      $formContact = $this->createForm(ContactType::class, $contact);
+      $formContact->handleRequest($request);
 
+      if($formContact->isSubmitted() && $formContact->isValid()){
+        //$contactFormData = $formContact->getData();
+        //$//https://codereviewvideos.com/course/symfony-4-beginners-tutorial/video/send-email-symfony-4
+        $manager->persist($contact);
+        $manager->flush();
+
+        $message = (new \Swift_Message('Formulaire de Contact Site ARE'))
+        ->setFrom($contact->getEmail())
+        ->setTo('jessicapineros@gmail.com', 'jeka99@hotmail.com')//mail de monnique et anneL
+        ->setBody(
+            $this->renderView(
+                  // templates/emails/registration.html.twig
+                  'site/email.html.twig',
+                  array('name' => $contact->getName(),
+                        'email' => $contact->getEmail(),
+                        'object' =>$contact->getObject(),
+                        'message'=>$contact->getMessage(),
+                        )
+              ),
+              'text/html'
+        //->setBody(
+          //  $contact->getMessage(),
+            //'text/plain'
+        );
+        $mailer->send($message);
+
+        return $this->render('site/flash_messages.html.twig', [
+          'page' => 'contact',
+        ]);
+      }
+
+      return $this->render('site/contact.html.twig', [
+        'page' => 'contact',
+        'formContact' => $formContact->createView()
       ]);
     }
+
     /**
      * @Route("/mentions", name="mentions")
      */
@@ -124,13 +170,12 @@ class SiteController extends AbstractController
      * @Route("/admin/new", name="admin_create")
      * @Route("/admin/{id}/edit"), name="admin_edit")
      */
-    public function form(DatesFormations $DatesFormations= null, Request $request, ObjectManager $manager) //sur new el article est null sur edit contient les donnes de DatesFormations con el id que le pasamos {id}/edit
+    public function createEditDates(DatesFormations $DatesFormations= null, Request $request, ObjectManager $manager) //sur new el article est null sur edit contient les donnes de DatesFormations con el id que le pasamos {id}/edit
     {
       //paramconverter : convertit un parametre en un entité ej: Strage A1 $stageA!
       if(!$DatesFormations){// si DatesFormations est null
         $DatesFormations = new DatesFormations();
       }
-
       /*
       $formDatesFormations = $this->createFormBuilder($DatesFormations)
                    ->add('date', TextType::Class, array('label' => 'Date :'))
@@ -155,14 +200,22 @@ class SiteController extends AbstractController
           'id' => $DatesFormations->getId(),
           'formDatesFormations' => $formDatesFormations->createView(),
           'editMode' => $DatesFormations->getId() !== null //si el id es diferente de null dara true
-
       ]);
     }
+
     /**
      * @Route("/admin/{id}/delete"), name="admin_delete")
      */
-    public function delete(DatesFormations $DatesFormations, Request $request, ObjectManager $manager){
+    public function deleteDates(DatesFormations $DatesFormations, ObjectManager $manager)
+    {
+      if ($DatesFormations) {
 
+        //$manager = $this->getDoctrine()->getManager(); //sobra porque ya se instancio arriba
+        $manager->remove($DatesFormations);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin');
+      }
     }
 
 

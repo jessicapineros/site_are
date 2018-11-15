@@ -10,37 +10,16 @@
       </div>
     </div>
   </div>
-
     <h1>Contact</h1>
-
     <div class="container">
-      <form>
-        <div class="form-group">
-          <label for="name">Prenom</label>
-          <input type="text" class="form-control" id="name">
-        </div>
-
-        <div class="form-group">
-          <label for="lastname">Nom</label>
-          <input type="text" class="form-control" id="lastname">
-        </div>
-
-        <div class="form-group">
-          <label for="objet">Objet</label>
-          <input type="text" class="form-control" id="objet">
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea class="form-control" id="message" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn">Envoyer</button>
-      </form>
+        {{form_start(formContact)}}
+          {{form_row(formContact.name, {'label': "Prenom et Nom"})}}
+          {{form_row(formContact.email)}}
+          {{form_row(formContact.object, {'label': "Objet"})}}
+          {{form_row(formContact.message)}}
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        {{form_end(formContact)}}
     </div>
-
 </div>
-
-
-
 
 {% endblock %}
