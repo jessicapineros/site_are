@@ -46,6 +46,13 @@ footer{
 
 
 #home{
+  .slider{
+    .caption{
+      p{
+        text-align: right;
+      }
+    }
+  }
   .comments{
       margin-top: 70px;
   }

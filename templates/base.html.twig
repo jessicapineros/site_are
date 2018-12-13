@@ -8,7 +8,12 @@
       {% block stylesheets %}
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
          <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Montserrat|Pacifico" rel="stylesheet">
+
          <link rel="stylesheet" href="{{asset('build/css/app.css')}}">
+         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+
+
+
 
       {% endblock %}
     </head>
@@ -34,7 +39,7 @@
                 </nav>
                 <nav class="d-lg-none">
                   <ul>
-                    <li><a class="burger" href="#"><img src="{{ asset('img/menu.svg')}}" alt=""></a></li>
+                    <li><a class="burger" href="#"><img src="img/menu.svg" alt=""></a></li>
                   </ul>
                 </nav>
               </div><!--end of menu -->
@@ -120,7 +125,11 @@
       </footer>
 
       {% block javascripts %}
+              <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
         <script type="text/javascript" src="{{ asset('build/js/app.js')}}"></script>
+
+
+
       {% endblock %}
     </body>
 </html>

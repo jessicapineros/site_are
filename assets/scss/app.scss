@@ -1,9 +1,12 @@
 
 // IMPORTING NORMALIZE
-@import '~normalize-scss/sass/normalize';
+//@import '~normalize-scss/sass/normalize';
 
 // IMPORTING BOOTSTRAP (lo busca en la carpeta de node modules/bootstrap/scss y busca bootstrap.)
 @import '~bootstrap/scss/bootstrap';
+
+// IMPORTING slick
+//@import "libraries/slick/slick-theme";
 
 
 /*********************
@@ -71,3 +74,6 @@ This is the average viewing window. So Desktops, Laptops, and in general anyone 
 	// styles in 1024up.scss
 	//@import "responsive/1200up";
 //} // end of media query
+
+@import "slick";
+@import "slick-theme";

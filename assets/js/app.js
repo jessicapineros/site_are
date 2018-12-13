@@ -9,6 +9,7 @@
 // any CSS you require will output into a single css file (app.css in this case)
 //require('../scss/app.scss');
 
+
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // var $ = require('jquery');
 
@@ -25,6 +26,9 @@ $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });
 
+//slider
+//require('./scss/slick-theme.scss');
+require('./slick.js');
 
 $(function(){
   /*
@@ -45,6 +49,25 @@ $(function(){
   $(".burger").click(function (){
       $(".menu-responsive").toggle("slow");
   })
+
+  //slider
+  $('.slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 4000,
+    mobileFirst: true,
+    pauseOnFocus: false,
+    pauseOnHover: false
+  });
+
+
+
+
+
 });
 
 
