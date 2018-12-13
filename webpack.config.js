@@ -40,6 +40,7 @@ Encore
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
+    //new webpack 4
     .enableSingleRuntimeChunk()
 
     // uncomment if you're having problems with a jQuery plugin

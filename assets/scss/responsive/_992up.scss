@@ -55,9 +55,10 @@ footer{
 #about, #methode, #formations, #contact, #stages, #ateliers,#admin, #email{
 .main-image{
   div{
-    height: 475px;
+    //height: 475px;
+    height: 325px;
     h3{
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       margin: 70px;
     }
   }
@@ -75,13 +76,25 @@ footer{
 #home{
   .slider{
     .caption{
+      padding: 8rem;
       padding-top: 15.5rem;
       p{
         font-size: 1.875rem;
       }
     }
+    .slick-prev{
+      left: 30px;
+    }
+    .slick-next{
+      right: 30px;
+    }
+    .slick-prev, .slick-next{
+      &:before{
+        font-size: 30px;
+      }
+    }
     div{
-      height: 550px;
+      height: 504px;
     }
   }
   h2{
