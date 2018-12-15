@@ -75,5 +75,6 @@ This is the average viewing window. So Desktops, Laptops, and in general anyone 
 	//@import "responsive/1200up";
 //} // end of media query
 
-@import "slick";
-@import "slick-theme";
+@import "libraries/slick";
+@import "libraries/slick-theme";
+@import "libraries/animate";

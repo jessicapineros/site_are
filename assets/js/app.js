@@ -30,7 +30,7 @@ $(document).ready(function() {
 //require('./scss/slick-theme.scss');
 require('./slick.js');
 
-$(function(){
+$(document).ready(function(){
   /*
  * Get Viewport Dimensions
  * returns object with viewport dimensions to match css in width and height properties
@@ -64,6 +64,107 @@ $(function(){
     pauseOnHover: false
   });
 
+  //ScrollMagic - animations
+  var controller = new ScrollMagic.Controller();
+
+  //build a scene
+  var homeH3 = new ScrollMagic.Scene({
+    triggerElement: '#home h3',
+    triggerHook: 0.9
+  })
+  .setClassToggle('#home h3', 'fadeIn')
+  //.reverse(false)
+  .addTo(controller);
+
+  var catchphrase = new ScrollMagic.Scene({
+    triggerElement: '.catchphrase',
+    triggerHook: 0.8
+  })
+  .setClassToggle('.catchphrase', 'fadeIn')
+  //.reverse(false)
+  .addTo(controller);
+
+  var buttonsMain = new ScrollMagic.Scene({
+    triggerElement: '.buttons-main',
+    triggerHook: 0.9
+  })
+  .setClassToggle('.buttons-main', 'fadeInUp')
+  //.reverse(false)
+  .addTo(controller);
+
+  var comment = new ScrollMagic.Scene({
+    triggerElement: '.comment',
+    triggerHook: 0.7
+  })
+  .setClassToggle('.comment', 'fadeIn')
+  //.reverse(false)
+  .addTo(controller);
+
+
+  var footer = new ScrollMagic.Scene({
+    triggerElement: 'footer',
+    triggerHook: 0.7
+  })
+  .setClassToggle('footer', 'fadeIn')
+  .reverse(false)
+  .addTo(controller);
+
+
+  $('.block1').each(function() {
+     var block1 = new ScrollMagic.Scene({
+         triggerElement: this,
+         triggerHook: 1
+       })
+       .setClassToggle(this, 'fadeInUp') // add class to project01
+       //.reverse(false)
+       .addTo(controller);
+     });
+
+   $('.block2').each(function() {
+      var block2 = new ScrollMagic.Scene({
+          triggerElement: this,
+          triggerHook: 0.6
+        })
+        .setClassToggle(this, 'fadeIn') // add class to project01
+        //.reverse(false)
+        .addTo(controller);
+      });
+
+    $('.blockLeft').each(function() {
+       var blockLeft = new ScrollMagic.Scene({
+           triggerElement: this,
+           triggerHook: 0.9
+         })
+         .setClassToggle(this, 'fadeInLeftBig') // add class to project01
+         .reverse(false)
+         .addTo(controller);
+       });
+
+     $('.block-white').each(function() {
+        var blockWhite = new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: 0.8
+          })
+          .setClassToggle(this, 'fadeInUp') // add class to project01
+          .reverse(false)
+          .addTo(controller);
+        });
+
+        $('.options').each(function() {
+           var options = new ScrollMagic.Scene({
+               triggerElement: this,
+               triggerHook: 0.8
+             })
+             .setClassToggle(this, 'fadeInUp') // add class to project01
+             .reverse(false)
+             .addTo(controller);
+           });
+
+      // buttons animation
+      $('.buttons-main a').hover(
+             function(){ $(this).addClass('pulse') },
+             function(){ $(this).removeClass('pulse') }
+      );
 
 
 

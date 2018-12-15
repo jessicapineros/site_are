@@ -57,6 +57,10 @@ ul {
   padding: 0;
 }
 
+.opacity{
+  opacity: 0;
+}
+
 
 //header
 header{
@@ -138,6 +142,7 @@ header{
 
 footer{
   color: $white;
+  opacity: 0;
   .contact-footer{
     background-color: $footer-gray;
     padding: 40px;
@@ -195,7 +200,7 @@ footer{
           margin: 0px 5px 0px 5px;
           font-size: 0.7rem;
           &:hover{
-            color: $footer-gray;
+            color: black;
           }
         }
       }
@@ -208,7 +213,7 @@ footer{
       a{
         font-weight: 600;
         &:hover{
-          color: $footer-gray;
+          color: black;
         }
       }
     }
@@ -233,11 +238,14 @@ footer{
 .comments{
   margin-top: 30px;
   font-style: italic;
+
+
   .comment{
     background-color: $beige;
     text-align: center;
     display: flex;
     align-items: center;
+    opacity: 0;
     div{
       padding: 80px 40px 45px 40px;
       &:nth-child(2){
@@ -256,6 +264,7 @@ footer{
       color: $white;
     }
   }//end of div
+
   .quotes-start-blue::before, .quotes-start-orange::before{
     position: relative;
     top: -15px;
@@ -314,8 +323,6 @@ footer{
   -moz-box-shadow: 0px 5px 20px 1px rgba(0,0,0,0.38);
   box-shadow: 0px 5px 20px 1px rgba(0,0,0,0.38);
 }
-
-
 
 // sauf #home
 #about, #methode, #formations, #contact, #ateliers, #stages, #mentions, #admin, #email{

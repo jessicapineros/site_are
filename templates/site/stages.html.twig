@@ -16,7 +16,8 @@
   <h1>Les Stages</h1>
 
   <div class="container-fluid block-gray">
-    <div class="container block-white">
+    <div class="container block-white animated opacity">
+      <div class="block2 animated opacity">
         <h2>Les bases de R.E.® - Stage A1</h2>
         <h3>Stage de 2 jours</h3>
         <h3>ou</h3>
@@ -36,6 +37,8 @@
           {% endfor %}
         </div>
         <p>À partir de 5 personnes, nous pouvons vous faire des propositions de dates.</p>
+      </div>
+      <div class="block2 animated opacity">
         <h2>Stages à la demande</h2>
         <p>Nous pouvons aussi organiser des stages à la demande, </p>
         <p>sur 2 jours en week-end ou en semaine, </p>
@@ -43,6 +46,8 @@
         <p>pour un groupe que vous aurez constitué - 5 personnes minimum.</p>
         <br>
         <p>Dates et tarifs à préciser.</p>
+      </div>
+      <div class="block2 animated opacity">
         <h2>Stages spécifiques</h2>
         <p>Vous êtes d’une association ou organisme ?</p>
         <br>
@@ -60,39 +65,46 @@
         <br>
         <p>Une convention sera établie entre l’Atelier Relationnel et votre structure.</p>
         <p>SIRET N° 817 889 918 00014</p>
+      </div>
     </div>
 
     <h1>Autres stages et Supervisions</h1>
-    <div class="container block-white">
-      <h2>Stage A2</h2>
-      <p>Stage “tout public”pour renforcer ses bases</p>
-      <div id="stage-a2" class="stages-dates">
-        {% for formation in dates_formations %}
-          {% if formation.category.title == "Stage A2"  %}
-            <p>{{ formation.date }}</p>
-          {% endif %}
-        {% endfor %}
+    <div class="container block-white animated opacity">
+      <div class="block2 animated opacity">
+        <h2>Stage A2</h2>
+        <p>Stage “tout public”pour renforcer ses bases</p>
+        <div id="stage-a2" class="stages-dates">
+          {% for formation in dates_formations %}
+            {% if formation.category.title == "Stage A2"  %}
+              <p>{{ formation.date }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
-      <h2>Stage B</h2>
-      <p>Stage à destination des personnes inscrites dans le cursus de certification R.E.®</p>
-      <div id="stage-b" class="stages-dates">
-        {% for formation in dates_formations %}
-          {% if formation.category.title == "Stage B"  %}
-            <p>{{ formation.date }}</p>
-          {% endif %}
-        {% endfor %}
+      <div class="block2 animated opacity">
+        <h2>Stage B</h2>
+        <p>Stage à destination des personnes inscrites dans le cursus de certification R.E.®</p>
+        <div id="stage-b" class="stages-dates">
+          {% for formation in dates_formations %}
+            {% if formation.category.title == "Stage B"  %}
+              <p>{{ formation.date }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
-      <h2>Les Supervisions</h2>
-      <p>Les supervisions s’adressent aux personnes qui suivent le cursus de certification R.E.® et aux Praticiens en cours d’activité.</p>
-      <p>Elles sont assurées par Monique Ducarre certifiée Praticien R.E.® et Superviseur R.E.®</p>
-      <br>
-      <p>Elles se déroulent soit :</p>
-      <p>- En séance individuelle sur RV</p>
-      <p>à Roquemaure ( 30) ou à distance via Skype</p>
-      <br>
-      <p>- En groupe</p>
-      <p>(dates et lieux à préciser )</p>
-    </div>
+      <div class="block2 animated opacity">
+        <h2>Les Supervisions</h2>
+        <p>Les supervisions s’adressent aux personnes qui suivent le cursus de certification R.E.® et aux Praticiens en cours d’activité.</p>
+        <p>Elles sont assurées par Monique Ducarre certifiée Praticien R.E.® et Superviseur R.E.®</p>
+        <br>
+        <p>Elles se déroulent soit :</p>
+        <p>- En séance individuelle sur RV</p>
+        <p>à Roquemaure ( 30) ou à distance via Skype</p>
+        <br>
+        <p>- En groupe</p>
+        <p>(dates et lieux à préciser )</p>
+      </div>
+    </div><!--end of container block white-->
   </div><!--end of container-fluid - block-gray-->
 
   <div class="cotainer">
@@ -101,13 +113,13 @@
 
   <div class="container-fluid">
     <div class="comments row">
-      <div class="comment col-12 col-md-6">
+      <div class="comment animated col-12 col-md-6">
         <div>
           <p class="quotes-start-orange quotes-end-orange">J’ai été vraiment marqué lors du stage RE lorsque j’ai senti l’apaisement dans mon corps, ce soulagement,  ce bien être intérieur quand ce que j’ai dit a été compris et entendu, surtout entendu !</p>
           <p><span>Marion</span></p>
         </div>
       </div>
-      <div class="comment col-12 col-md-6">
+      <div class="comment animated col-12 col-md-6">
         <div class="">
           <p class="quotes-start-blue quotes-end-blue">La formation R.E. fut pour moi l’occasion de dire et d’entendre me dire des choses qui sans cette  circonstance n’auraient sûrement pas été dite et qui pourtant sont tellement agréables et émouvantes et à dire et à entendre.</p>
           <p><span>Sylvie</span></p>
