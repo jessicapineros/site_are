@@ -3,22 +3,57 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="robots" content="index,follow">
       <title>{% block title %}Atelier Relationnel{% endblock %}</title>
-      <!--<link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">-->
-      <link rel="icon" href="img/logo-modif4.png">
+      <meta name="author" content="L'Atelier Relationnel"/>
+      <meta name="description" content="Notre association a pour but d'optimiser le savoir être dans les relations, en utilisant des outils de la Méthode R.E.® au travers d'exercices précis et concrets."/>
+
+      <meta property="og:locale" content="fr_FR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Atelier Relationnel" />
+      <meta property="og:description" content="Notre association a pour but d'optimiser le savoir être dans les relations, en utilisant des outils de la Méthode R.E.® au travers d'exercices précis et concrets." />
+      <meta property="og:url" content="http://atelierrelationnel.fr/"/>
+      <meta property="og:site_name" content="Atelier Relationnel"/>
+      <!--
+      <meta property="og:image" content="http://atelierrelationnel.fr/build/images/logo-modif4.77ea76ee.png" />
+      <meta property="og:image:secure_url" content="" />
+      <meta property="og:image:width" content="1024" />
+      <meta property="og:image:height" content="536" />
+    -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:description" content="Notre association a pour but d'optimiser le savoir être dans les relations, en utilisant des outils de la Méthode R.E.® au travers d'exercices précis et concrets." />
+      <meta name="twitter:title" content="Jonction | Cabinet de conseil et comptabilité Saint-Étienne" />
+      <meta name="twitter:url" content="http://atelierrelationnel.fr/"/>
+      <meta name="twitter:image" content="" />
+
       {% block stylesheets %}
+         <!--<link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">-->
+         <link rel="icon" href="img/logo-ARE.png">
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
          <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Montserrat|Pacifico" rel="stylesheet">
-      <!--   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+         <!--   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>-->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
         <!-- <link rel="stylesheet" href="{ {asset('build/css/app.css')}}">-->
          {{ encore_entry_link_tags('css/app') }}
 
       {% endblock %}
+
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TT2J3PL');</script>
+      <!-- End Google Tag Manager -->
+
     </head>
 
     <body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT2J3PL"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
       <header>
         <div class="container">
           <div class="logonavbar row">
@@ -39,7 +74,7 @@
                 </nav>
                 <nav class="d-lg-none">
                   <ul>
-                    <li><a class="burger" href="#"><img src="img/menu.svg" alt=""></a></li>
+                    <li><a class="burger" href="#"><img src="img/menu.svg" alt="Menu"></a></li>
                   </ul>
                 </nav>
               </div><!--end of menu -->
@@ -62,7 +97,7 @@
 
       {% endblock %}
 
-      <footer class="animated">
+      <footer>
           <div class="contact-footer">
             <div class="row">
               <div class="col-12 col-lg-8">

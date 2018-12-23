@@ -69,7 +69,7 @@ class SiteController extends AbstractController
     }
 
     /**
-     * @Route("/formations/stages", name="stages")
+     * @Route("/stages", name="stages")
      */
     public function stages()//(DatesFormationsRepository $repo)
     {
@@ -82,7 +82,7 @@ class SiteController extends AbstractController
       ]);
     }
     /**
-     * @Route("/formations/ateliers", name="ateliers")
+     * @Route("/ateliers", name="ateliers")
      */
     public function ateliers()
     {

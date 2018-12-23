@@ -12,43 +12,46 @@
       </div>
     </div>
   </div>
-  <h1>Les Ateliers d’entraînement</h1>
-  <div class="container h3 block2 animated opacity">
-    <h3>Vous êtes reparti de votre premier stage heureux d'avoir découvert un outil concret pour améliorer vos relations.</h3>
-    <h3> Vous avez envie de mettre en pratique R.E.® dans votre vie quotidienne (personnelle ou professionnelle...)</h3>
-    <h3><span>Les ateliers d’entraînement sont pour vous !</span></h3>
-    <h3>Dans un atelier, vous continuerez à vous entraîner à utiliser les outils de R.E.® pour conforter et développer les acquis de votre premier stage.</h3>
+  <div class="container-fluid block-pin">
+    <h1>Les Ateliers d’entraînement</h1>
+    <div class="container h3 block2 animated opacity">
+      <h3>Vous êtes reparti de votre premier stage heureux d'avoir découvert un outil concret pour améliorer vos relations.</h3>
+      <h3> Vous avez envie de mettre en pratique R.E.® dans votre vie quotidienne (personnelle ou professionnelle...)</h3>
+      <h3><span>Les ateliers d’entraînement sont pour vous !</span></h3>
+      <h3>Dans un atelier, vous continuerez à vous entraîner à utiliser les outils de R.E.® pour conforter et développer les acquis de votre premier stage.</h3>
+    </div>
+
+    <div class="container-fluid block-gray">
+      <div class="container block-white animated opacity">
+        <div class="block2 animated opacity">
+          <h2>Comment ?</h2>
+          <p>En groupe, de 4 à 6 personnes</p>
+          <p>Durée : 3 heures</p>
+          <br>
+          <p>La participation aux ateliers demande un engagement sur minimum 4 séances </p>
+          <p>Les entrainements sont accompagnés accompagné par un Praticien R.E.®</p>
+          <p>Tarif : entre 15 et 25€ la séance. (Tarif ajusté aux frais de déplacements du formateur.</p>
+          <br>
+          <p>Nos ateliersont lieu en ce moment à :</p>
+        </div>
+        <div id="stage-a1"class="stages-dates block2 animated opacity">
+          {% for formations in dates_formations %}
+            {% if formations.category.title == "Ateliers"  %}
+              <p>{{ formations.date }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="block2 animated opacity">
+          <h3 class="">Notre expérience nous montre que R.E.®, s'intègre au pas à pas en s'y entraînant régulièrement.</h3>
+          <p>Nous souhaitons pouvoir proposer un atelier d’entraînement à toute personne ayant découvert et expérimenter RE </p>
+          <p>dans un premier stage.</p>
+          <p>Si besoin vous trouverez la liste des ateliers proposés par d’autres Praticiens R.E.®, sur le site d’<span><a href="http://www.ifre.info" target="_blank">IFRE</a></span>.</p>
+        </div>
+      </div><!--end of container- block-white-->
+    </div><!--end of container- block-white-->
   </div>
 
-  <div class="container-fluid block-gray">
-    <div class="container block-white animated opacity">
-      <div class="block2 animated opacity">
-        <h2>Comment ?</h2>
-        <p>En groupe, de 4 à 6 personnes</p>
-        <p>Durée : 3 heures</p>
-        <br>
-        <p>La participation aux ateliers demande un engagement sur minimum 4 séances </p>
-        <p>Les entrainements sont accompagnés accompagné par un Praticien R.E.®</p>
-        <p>Tarif : entre 15 et 25€ la séance. (Tarif ajusté aux frais de déplacements du formateur.</p>
-        <br>
-        <p>Nos ateliersont lieu en ce moment à :</p>
-      </div>
-      <div id="stage-a1"class="stages-dates block2 animated opacity">
-        {% for formations in dates_formations %}
-          {% if formations.category.title == "Ateliers"  %}
-            <p>{{ formations.date }}</p>
-          {% endif %}
-        {% endfor %}
-      </div>
-      <div class="block2 animated opacity">
-        <h3 class="">Notre expérience nous montre que R.E.®, s'intègre au pas à pas en s'y entraînant régulièrement.</h3>
-        <p>Nous souhaitons pouvoir proposer un atelier d’entraînement à toute personne ayant découvert et expérimenter RE </p>
-        <p>dans un premier stage.</p>
-        <p>Si besoin vous trouverez la liste des ateliers proposés par d’autres Praticiens R.E.®, sur le site d’<span><a href="http://www.ifre.info" target="_blank">IFRE</a></span>.</p>
-      </div>
-    </div>
-  </div><!--end of container- block-white-->
-  <div class="cotainer">
+  <div class="cotainer voir">
     <a class="voir-btn" href="{{path('stages')}}">Voir les Stages</a>
   </div>
 

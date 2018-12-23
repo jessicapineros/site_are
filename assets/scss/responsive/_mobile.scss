@@ -70,7 +70,7 @@ header{
       div{
         min-height: 105px;
         width: 105px;
-        background: url('../img/logo-modif4.png') $white;
+        background: url('../img/logo-ARE.png') $white;
         @include background(contain, no-repeat, center);
       }
     }
@@ -142,7 +142,6 @@ header{
 
 footer{
   color: $white;
-  opacity: 0;
   .contact-footer{
     background-color: $footer-gray;
     padding: 40px;
@@ -308,11 +307,17 @@ footer{
   position: relative;
   top: 100px;
   padding: 0;
+
   h1{
     position: relative;
     top: -100px;
   }
 }
+.block-gray:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
 .block-white{
   background-color: $white;
   top: -100px;
@@ -327,6 +332,7 @@ footer{
 // sauf #home
 #about, #methode, #formations, #contact, #ateliers, #stages, #mentions, #admin, #email{
 .main-image{
+  overflow: hidden;
   div{
     height: 336px;
     width: 100%;
@@ -583,15 +589,20 @@ footer{
       color: $blue;
     }
   }
+  .voir{
+    height: 70px;
+  }
   .voir-btn{
-    position: relative;
-    font-size: 1.2rem;
+    position: absolute;
+    font-size: 1.3rem;
     font-weight: 600;
     margin: 22px auto 0 auto;
     padding: 10px;
     display: block;
     text-align: center;
     text-decoration: underline;
+    z-index: 2;
+    width: 100%;
   }
 }
 
@@ -634,7 +645,7 @@ footer{
 
   form{
     width: 280px;
-    margin: 80px auto;
+    margin: 80px auto 115px auto;
     button:hover{
       background-color: $blue;
       color: white;
@@ -653,4 +664,12 @@ footer{
   h1{
     font-size: 1.15rem;
   }
+}
+.block-pin{
+  background-color: $white;
+  z-index: 2;
+  position: relative;
+  padding: 1px 0 0 0;
+
+
 }

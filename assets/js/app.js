@@ -100,15 +100,15 @@ $(document).ready(function(){
   //.reverse(false)
   .addTo(controller);
 
-
+/*
   var footer = new ScrollMagic.Scene({
     triggerElement: 'footer',
     triggerHook: 0.7
   })
   .setClassToggle('footer', 'fadeIn')
-  .reverse(false)
+  //.reverse(false)
   .addTo(controller);
-
+*/
 
   $('.block1').each(function() {
      var block1 = new ScrollMagic.Scene({
@@ -123,12 +123,13 @@ $(document).ready(function(){
    $('.block2').each(function() {
       var block2 = new ScrollMagic.Scene({
           triggerElement: this,
-          triggerHook: 0.6
+          triggerHook: 0.8
         })
         .setClassToggle(this, 'fadeIn') // add class to project01
         //.reverse(false)
         .addTo(controller);
       });
+      
 
     $('.blockLeft').each(function() {
        var blockLeft = new ScrollMagic.Scene({
@@ -150,15 +151,41 @@ $(document).ready(function(){
           .addTo(controller);
         });
 
-        $('.options').each(function() {
-           var options = new ScrollMagic.Scene({
-               triggerElement: this,
-               triggerHook: 0.8
-             })
-             .setClassToggle(this, 'fadeInUp') // add class to project01
-             .reverse(false)
-             .addTo(controller);
-           });
+      $('.options').each(function() {
+         var options = new ScrollMagic.Scene({
+             triggerElement: this,
+             triggerHook: 0.8
+           })
+           .setClassToggle(this, 'fadeInUp') // add class to project01
+           .reverse(false)
+           .addTo(controller);
+         });
+
+
+  //parallax scene
+  var parallaxTL = new TimelineMax();
+  parallaxTL
+  .from('.bcg-parallax'/*element*/, 4/*duration*/, {y: '-50%', ease:Power0.easeNone/*ofset*/}, 0)
+
+  var sildeParallaxScene = new ScrollMagic.Scene({
+    triggerElement: '.main-image',
+    triggerHook: 1,
+    duration: '100%'
+  })
+  .setTween(parallaxTL)
+  .addTo(controller);
+
+
+  var pinIntroScene2 = new ScrollMagic.Scene({
+    triggerElement: '.main-image',
+    triggerHook: 0,
+    duration: '100%'
+  })
+  .setPin('.main-image', {pushFollowers: false})
+  .addTo(controller);
+
+
+
 
       // buttons animation
       $('.buttons-main a').hover(
