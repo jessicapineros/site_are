@@ -129,7 +129,7 @@ $(document).ready(function(){
         //.reverse(false)
         .addTo(controller);
       });
-      
+
 
     $('.blockLeft').each(function() {
        var blockLeft = new ScrollMagic.Scene({
@@ -165,7 +165,7 @@ $(document).ready(function(){
   //parallax scene
   var parallaxTL = new TimelineMax();
   parallaxTL
-  .from('.bcg-parallax'/*element*/, 4/*duration*/, {y: '-50%', ease:Power0.easeNone/*ofset*/}, 0)
+  .from('.bcg-parallax'/*element*/, 4/*duration*/, {y: '-20%', ease:Power0.easeNone/*ofset*/}, 0)
 
   var sildeParallaxScene = new ScrollMagic.Scene({
     triggerElement: '.main-image',
