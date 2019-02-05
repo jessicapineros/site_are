@@ -50,6 +50,9 @@ footer{
 .stages-dates{
   width: 700px;
 }
+.content{
+   padding: 0 15px 70px 15px;
+ }
 
 //-------- Pages general
 #about, #methode, #formations, #contact, #stages, #ateliers,#admin, #email{
@@ -64,9 +67,6 @@ footer{
     }
   }
 }//end of main-image
- .content{
-   padding: 0 15px 50px 15px;
- }
  ul{
    li{
      margin: 0 0 1.3rem 4rem;

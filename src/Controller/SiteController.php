@@ -64,7 +64,7 @@ class SiteController extends AbstractController
     public function formations()
     {
       return $this->render('site/formations.html.twig', [
-        'page' => "formations",
+        'page' => "formations"
       ]);
     }
 
@@ -81,6 +81,17 @@ class SiteController extends AbstractController
         'dates_formations' => $dates_formations
       ]);
     }
+
+    /**
+     * @Route("/anne", name="anne")
+     */
+    public function anne()
+    {
+      return $this->render('site/anne.html.twig', [
+        'page' => "anne"
+      ]);
+    }
+
     /**
      * @Route("/ateliers", name="ateliers")
      */

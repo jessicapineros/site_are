@@ -18,15 +18,11 @@
     <div class="container-fluid block-gray">
       <div class="container block-white">
         <div class="block2 animated opacity">
-          <h2>Les bases de R.E.® - Stage A1</h2>
+          <h2>Les bases de RE® - Stage <span>A1</span></h2>
           <h3>Stage de 2 jours</h3>
           <h3>ou</h3>
           <h3>Cycle de 4 modules de 3h : engagement pour les 4 séances.</h3>
           <p>Nombre de personnes : entre 4 et 6 avec 1 intervenant et entre 8 et 12 avec 2 intervenants.</p>
-          <br>
-          <p>Prix : 180€ par personne</p>
-          <p>Tarif couple : 330 € pour le couple</p>
-          <p>Lieu : Gard, Vaucluse, Hérault.</p>
           <br>
           <p>Prochaines dates de stages :</p>
           <div id="stage-a1"class="stages-dates">
@@ -36,10 +32,9 @@
               {% endif %}
             {% endfor %}
           </div>
-          <p>À partir de 5 personnes, nous pouvons vous faire des propositions de dates.</p>
         </div>
         <div class="block2 animated opacity">
-          <h2>Stages à la demande</h2>
+          <h2>Stages <span>A1</span> à la demande</h2>
           <p>Nous pouvons aussi organiser des stages à la demande, </p>
           <p>sur 2 jours en week-end ou en semaine, </p>
           <p>dans votre  région, </p>
@@ -55,7 +50,7 @@
           <br>
           <p>Par exemple, nous sommes intervenues pour : </p>
           <br>
-          <p>La formation initiale et continue des bénévoles d’accompagnement en soins palliatifs. <span><a href="#">En savoir plus</a></span></p>
+          <p>La formation initiale et continue des bénévoles d’accompagnement en soins palliatifs.</p>
           <p>La formation des animateurs d’une association axée sur la communication dans le couple.</p>
           <br>
           <p>L’apprentissage est le même que dans les stages "tout public", </p>
@@ -71,7 +66,7 @@
       <h1>Autres stages et Supervisions</h1>
       <div class="container block-white animated opacity">
         <div class="block2 animated opacity">
-          <h2>Stage A2</h2>
+          <h2>Stage <span>A2</span></h2>
           <p>Stage “tout public”pour renforcer ses bases</p>
           <div id="stage-a2" class="stages-dates">
             {% for formation in dates_formations %}
@@ -82,8 +77,8 @@
           </div>
         </div>
         <div class="block2 animated opacity">
-          <h2>Stage B</h2>
-          <p>Stage à destination des personnes inscrites dans le cursus de certification R.E.®</p>
+          <h2>Stage - Formation de Practiciens RE</span></h2>
+          <p>Stage à destination des personnes inscrites dans le cursus de certification RE®</p>
           <div id="stage-b" class="stages-dates">
             {% for formation in dates_formations %}
               {% if formation.category.title == "Stage B"  %}
@@ -94,14 +89,14 @@
         </div>
         <div class="block2 animated opacity">
           <h2>Les Supervisions</h2>
-          <p>Les supervisions s’adressent aux personnes qui suivent le cursus de certification R.E.® et aux Praticiens en cours d’activité.</p>
-          <p>Elles sont assurées par Monique Ducarre certifiée Praticien R.E.® et Superviseur R.E.®</p>
+          <p>Les supervisions s’adressent aux personnes qui suivent le cursus de certification RE® et aux Praticiens RE® en cours d’activité.</p>
+          <p>Elles sont assurées par Monique Ducarre certifiée Praticien RE® et Superviseur RE®</p>
           <br>
           <p>Elles se déroulent soit :</p>
-          <p>- En séance individuelle sur RV</p>
+          <p>- en séance individuelle sur RV</p>
           <p>à Roquemaure ( 30) ou à distance via Skype</p>
           <br>
-          <p>- En groupe</p>
+          <p>- en groupe</p>
           <p>(dates et lieux à préciser )</p>
         </div>
       </div><!--end of container block white-->
@@ -118,14 +113,16 @@
     <div class="comments row">
       <div class="comment animated col-12 col-md-6">
         <div>
-          <p class="quotes-start-orange quotes-end-orange">J’ai été vraiment marqué lors du stage RE lorsque j’ai senti l’apaisement dans mon corps, ce soulagement,  ce bien être intérieur quand ce que j’ai dit a été compris et entendu, surtout entendu !</p>
+          <p class="quotes-start-orange quotes-end-orange">J’ai été vraiment marquée lors du stage RE lorsque j’ai senti l’apaisement dans mon corps, ce soulagement,  ce bien être intérieur quand ce que j’ai dit a été compris et entendu, surtout entendu !</p>
           <p><span>Marion</span></p>
+          <p class="quotes-start-orange quotes-end-orange">Nous échangeons avec plus de sérénité , nous ne gardons plus les vieilles rancœurs et nous parlons de ce qui nous déplaît sans attendre de le ruminer.</p>
+          <p><span>témoignage d'un couple</span></p>
         </div>
       </div>
       <div class="comment animated col-12 col-md-6">
         <div class="">
-          <p class="quotes-start-blue quotes-end-blue">La formation R.E. fut pour moi l’occasion de dire et d’entendre me dire des choses qui sans cette  circonstance n’auraient sûrement pas été dite et qui pourtant sont tellement agréables et émouvantes et à dire et à entendre.</p>
-          <p><span>Sylvie</span></p>
+          <p class="quotes-start-blue quotes-end-blue">Je suis infirmière et je travaille auprès de personnes malades en fin de vie. Quand j’ai expérimenté par moi-même le confort et le soulagement de me sentir complètement compris lors d'un premier stage RE® , j’ai décidé de me former à cette méthode pour l’utiliser dans mon travail. <br>Être en empathie avec la personne que j'accompagne est, pour moi, la base de la relation soignante. <br>RE® m'a donné un outil qui a vraiment changé ma relation à l'autre en profondeur, d'abord dans mon cadre professionnel puis ça s'est étendu dans ma vie personnelle aussi ! ... <span><a href="{{path('anne')}}">lire plus</a></span></p>
+          <p><span>AnneLaurance</span></p>
         </div>
       </div>
     </div>

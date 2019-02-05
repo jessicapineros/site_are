@@ -1,8 +1,8 @@
 {
-  "build/css/app.css": "/build/css/app.e1aaf026.css",
-  "build/js/app.css": "/build/js/app.e1aaf026.css",
-  "build/js/app.js": "/build/js/app.6b4f1718.js",
-  "build/runtime.js": "/build/runtime.6cf710cd.js",
+  "build/css/app.css": "/build/css/app.css",
+  "build/js/app.css": "/build/js/app.css",
+  "build/js/app.js": "/build/js/app.js",
+  "build/runtime.js": "/build/runtime.js",
   "build/fonts/slick.woff": "/build/fonts/slick.b7c9e1e4.woff",
   "build/fonts/slick.eot": "/build/fonts/slick.ced611da.eot",
   "build/fonts/slick.ttf": "/build/fonts/slick.d41f55a7.ttf",

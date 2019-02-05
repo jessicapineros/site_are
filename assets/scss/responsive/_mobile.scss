@@ -346,18 +346,7 @@ footer{
     }
   }
  }// end of main-image
- .content{
-   padding: 0 15px 30px 15px;
-   span{
-     font-weight: 600;
-   }
-   a{
-     color: $gray;
-     &:hover{
-       color: $blue;
-     }
-   }
- }
+ 
  ul{
    margin: 45px 0 45px 0;
    li{
@@ -374,6 +363,19 @@ footer{
    }
  }
 }//end of #
+
+.content{
+   padding: 0 15px 30px 15px;
+   span{
+     font-weight: 600;
+   }
+   a{
+     color: $gray;
+     &:hover{
+       color: $blue;
+     }
+   }
+ }
 
 //-----------------------home------------------------------
 
@@ -503,6 +505,9 @@ footer{
       }
     }
   }
+  .who-img{
+    width: 700px;
+  }
 }//end of #methode
 
 #formations{
@@ -579,6 +584,9 @@ footer{
   }
   h2{
     text-align: center;
+    span{
+      font-family: $kaushan;
+    }
   }
   p{
     text-align: center;
